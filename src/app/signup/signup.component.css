@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 .log_boxx{
-    background: rgb(241, 222, 222);
+    background: rgb(190,186,194);
     min-height: 100vh;
     display: flex;
     align-items: center;

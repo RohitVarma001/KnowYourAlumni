@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserServiceService } from '../user-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(public userSer: UserServiceService, private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  doLogout() {
+    localStorage.clear();
+    this.router.navigate(['/']);
   }
 
 }

@@ -1,0 +1,67 @@
+<p style="background-color: rgb(190,186,194);color: rgb(190,186,194);">hi</p>
+<div class="log_boxx text-dark">
+    <div class="log_box">
+        <h1 class="font-weight-bolder text-uppercase text-center">Edit Details</h1>
+        <hr />
+        <p class="bg-sucess text-light">
+            {{msg}}
+        </p>
+        <div class="font-weight-bolder">
+            Id : {{ userId }}
+        </div>
+        <form (submit)="doEditUser(f)" #f="ngForm">
+            <label for="uname">Name :<input type="text" class="form-control" name="uname" placeholder="Enter Your Name"
+                    [(ngModel)]="userName" ngModel #username="ngModel" required />
+                <br>
+                <p class="alert alert-danger" *ngIf="username.errors?.required && username.touched">
+                    Please Enter Username
+                </p>
+                <p class="alert alert-danger" *ngIf="username.errors?.minlength && username.touched">
+                    Please Enter Minimum 6 Characters
+                </p>
+            </label>
+            <label for="uemail">Email :
+                <input type="text" class="form-control" name="uemail" ngModel #useremail="ngModel"
+                    [(ngModel)]="userEmail" placeholder="Enter Your Email" required email>
+                <br>
+                <p class="alert alert-danger" *ngIf="useremail.errors?.required && useremail.touched">
+                    Please Enter Your Email
+                </p>
+                <p class="alert alert-danger" *ngIf="useremail.errors?.email && useremail.touched">
+                    Please Enter Valid Email
+                </p>
+            </label>
+            <label for="uopassword">Old Password :<input type="password" class="form-control" name="uopassword" ngModel
+                    #userpassword="ngModel" placeholder="Enter your Password here" required />
+            </label>
+            <label for="unpassword">New Password :<input type="password" class="form-control" name="unpassword" ngModel
+                    #userpassword="ngModel" placeholder="Enter your Password here" required />
+            </label>
+            <label for="ucol">College :<input type="text" class="form-control" name="ucol"
+                    placeholder="Enter your College Name" ngModel #usercollege="ngModel" [(ngModel)]="userCollege"
+                    required />
+                <br>
+                <p class="alert alert-danger" *ngIf="usercollege.errors?.required && usercollege.touched">
+                    Please Enter User College
+                </p>
+            </label>
+            <label for="uphone">Phone Number :<input type="text" class="form-control" name="uphone"
+                    placeholder="Enter Your Phone Number" ngModel #userphone="ngModel" pattern="^(0|[1-9][0-9]*)$"
+                    minlength="10" [(ngModel)]="userPhone" required />
+                <br>
+                <p class="alert alert-danger" *ngIf="userphone.errors?.required && userphone.touched">
+                    Please Enter Phone
+                </p>
+                <p class="alert alert-danger" *ngIf="userphone.errors?.minlength && userphone.touched">
+                    Please Enter Minimum 10 Numbers
+                </p>
+                <p class="alert alert-danger" *ngIf="userphone.errors?.pattern">
+                    Please Enter Numbers Only
+                </p>
+            </label>
+            <br>
+            <input type="submit" class="btn btn-success text-light" value="Edit" [disabled]="f.invalid" /> &nbsp;
+        </form>
+    </div>
+</div>
+<p style="background-color: rgb(190,186,194);color: rgb(190,186,194);">hi</p>

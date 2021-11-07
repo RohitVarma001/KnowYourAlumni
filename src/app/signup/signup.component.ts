@@ -28,7 +28,7 @@ export class SignupComponent implements OnInit {
       this.msg = data;
 
       form.reset();
-      this.router.navigate(['/profile']);
+      this.router.navigate(['/login']);
 
     }, (error: any) => {
 

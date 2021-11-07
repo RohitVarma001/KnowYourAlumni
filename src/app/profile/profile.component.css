@@ -113,3 +113,10 @@
     text-align: center;
     color: rgb(121, 118, 118);
 }
+.log_box .pic{
+    width: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 80%;
+}

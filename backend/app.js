@@ -1,8 +1,8 @@
+const keys = require("./key");
 const express = require("express");
 const cors = require("cors");
 const bodyparser = require("body-parser");
 const mongodb = require("mongodb").MongoClient;
-const { error } = require("console");
 
 const app = express();
 
@@ -10,7 +10,7 @@ app.use(cors());
 
 app.use(bodyparser.json());
 
-mongodb.connect("mongodb+srv://rohit123:rlM7ZbYfOisbnGOg@cluster0.tnyqb.mongodb.net/KnowYourAlumni?retryWrites=true&w=majority", (error, result) =>
+mongodb.connect("mongodb+srv://" + keys.urlname + ":" + keys.urlpass + "@cluster0.tnyqb.mongodb.net/" + keys.database + "?retryWrites=true&w=majority", (error, result) =>
 {
     if (error) {
         console.log("Database Not Connected");

@@ -3,8 +3,8 @@
   <div class="log_box">
     <h1 class="font-weight-bolder text-uppercase text-center">Sign Up</h1>
     <hr />
-    <p class="bg-dark text-light">
-      {{msg}}
+    <p class="text-danger">
+      <strong>{{msg}}</strong>
     </p>
     <form (submit)="doRegistration(f)" #f="ngForm">
       <label for="uname">Name :<input type="text" class="form-control" name="uname" placeholder="Leslie Alexander"

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { UserServiceService } from '../user-service.service';
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -7,9 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  user: any
+  data: any
+  msg: String
+
+  constructor(public userSer: UserServiceService) { }
 
   ngOnInit(): void {
+
+    this.data = {
+      _id: parseInt(localStorage.getItem("loggeduser"))
+    };
+    console.log(this.data);
+    this.userSer.userData(this.data).subscribe((data: any[]) => {
+      if (data.length === 0) {
+        this.msg = "User Invalid";
+      } else {
+        this.user = data[0];
+      }
+    }, (error) => {
+      this.msg = "User Invalid";
+    });
   }
 
 }

@@ -1,26 +1,63 @@
-
-
-
-
-
-
-  <div class="log_boxx">
+<p style="background-color: rgb(190,186,194);color: rgb(190,186,194);">hi</p>
+<div class="log_boxx text-dark">
   <div class="log_box">
-    
-    <hr/>
-    <form action="" autocomplete="off">
-      <label for="text">Name<input type="text" name="text" id="text" placeholder="Leslie Alexander" /></label>
-      <label for="emil">Email<input type="email" name="email" id="email" placeholder="example@mail.com" /></label>
-      <label for="password">Password<input type="password" name="password" id="password"
-          placeholder="at least 8 characters" />
-        <i class="far fa-eye" id="changeIcon" onClick="viewPassword()"></i></label>
-       <button>Sign up</button>
+    <h1 class="font-weight-bolder text-uppercase text-center">Sign Up</h1>
+    <hr />
+    <p class="text-danger">
+      <strong>{{msg}}</strong>
+    </p>
+    <form (submit)="doRegistration(f)" #f="ngForm">
+      <label for="uname">Name :<input type="text" class="form-control" name="uname" placeholder="Leslie Alexander"
+          ngModel #username="ngModel" required />
+        <br>
+        <p class="alert alert-danger" *ngIf="username.errors?.required && username.touched">
+          Please Enter Username
+        </p>
+        <p class="alert alert-danger" *ngIf="username.errors?.minlength && username.touched">
+          Please Enter Minimum 6 Characters
+        </p>
+      </label>
+      <label for="uemail">Email :
+        <input type="text" class="form-control" name="uemail" ngModel #useremail="ngModel"
+          placeholder="example@mail.com" required email>
+        <br>
+        <p class="alert alert-danger" *ngIf="useremail.errors?.required && useremail.touched">
+          Please Enter Your Email
+        </p>
+        <p class="alert alert-danger" *ngIf="useremail.errors?.email && useremail.touched">
+          Please Enter Valid Email
+        </p>
+      </label>
+      <label for="upassword">Password :<input type="password" class="form-control" name="upassword" ngModel
+          #userpassword="ngModel" placeholder="Enter your Password here" required />
+      </label>
+      <label for="ucol">College :<input type="text" class="form-control" name="ucol" placeholder="Enter your College"
+          ngModel #usercollege="ngModel" required />
+        <br>
+        <p class="alert alert-danger" *ngIf="usercollege.errors?.required && usercollege.touched">
+          Please Enter User College
+        </p>
+      </label>
+      <label for="uphone">Phone Number :<input type="text" class="form-control" name="uphone"
+          placeholder="Enter Your Phone Number" ngModel #userphone="ngModel" pattern="^(0|[1-9][0-9]*)$" minlength="10"
+          required />
+        <br>
+        <p class="alert alert-danger" *ngIf="userphone.errors?.required && userphone.touched">
+          Please Enter Phone
+        </p>
+        <p class="alert alert-danger" *ngIf="userphone.errors?.minlength && userphone.touched">
+          Please Enter Minimum 10 Numbers
+        </p>
+        <p class="alert alert-danger" *ngIf="userphone.errors?.pattern">
+          Please Enter Numbers Only
+        </p>
+      </label>
+      <br>
+      <input type="submit" class="btn btn-success text-light" value="Signup" [disabled]="f.invalid" /> &nbsp;
     </form>
-    <hr/>
-    <p>Don't have an account?</p>
-    <a href="login/login.component.html">Log in</a>
+    <hr>
+    <p>Have an account?</p>
+    <a routerLink="/login" routerLinkActive="active">Log in</a>
   </div>
 </div>
- 
-
-
+<p style="background-color: rgb(190,186,194);color: rgb(190,186,194);">hi</p>

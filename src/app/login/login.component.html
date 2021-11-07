@@ -1,20 +1,29 @@
-    <div class="log_boxx">
+<div class="log_boxx">
     <div class="log_box">
-       
-        <hr />
-        <form action="" autocomplete="off">
-            <label for="emil">Email<input type="email" name="email" id="email"
-                    placeholder="leslie@pixellz.io" /></label>
-            <label for="password">Password<input type="password" name="password" id="password"
-                    placeholder="leslie234%@5@" />
-                <i class="far fa-eye" id="changeIcon" onClick="viewPassword()"></i></label>
-            <button>Log in</button>
+        <h1 class="font-weight-bolder text-uppercase text-center">Login</h1>
+        <hr>
+        <p class="text-danger">
+            <strong>{{msg}}</strong>
+        </p>
+        <form (submit)="doLogin(f)" #f="ngForm">
+            <label for="emil">Email:<input type="email" name="uemail" class="form-control" name="uemail" ngModel
+                    #useremail="ngModel" placeholder="leslie@pixellz.io" />
+                <br>
+                <p class="alert alert-danger" *ngIf="useremail.errors?.required && useremail.touched">
+                    Please Enter Your Email
+                </p>
+                <p class="alert alert-danger" *ngIf="useremail.errors?.email && useremail.touched">
+                    Please Enter Valid Email
+                </p>
+            </label>
+            <label for="password">Password: <input type="password" name="upassword" ngModel #userpassword="ngModel"
+                    placeholder="Enter your Password here" required />
+
+            </label>
+            <input type="submit" class="btn btn-success text-light" value="Login" [disabled]="f.invalid" /> &nbsp;
         </form>
         <hr />
         <p>Don't have an account?</p>
-        <a href="signup.component.html">Sign up</a>
+        <a routerLink="/signup" routerLinkActive="active">Sign up</a>
     </div>
 </div>
-    
-
-

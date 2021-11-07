@@ -1,1 +1,39 @@
-<p>profile works!</p>
+<div class="log_boxx">
+    <div class="log_box">
+        <h1 class="font-weight-bolder text-uppercase text-center ">Profile</h1>
+        <hr>
+        <p class="text-danger">
+            <strong>{{msg}}</strong>
+        </p>
+        <div>
+            <img class="pic" src="assets/pic.jpg" alt="Profile">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th scope="row">Name :</th>
+                        <td>{{user.uname}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Id :</th>
+                        <td>{{user._id}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Email :</th>
+                        <td>{{user.uemail}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">College :</th>
+                        <td>{{user.ucol}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Phone :</th>
+                        <td>{{user.uphone}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <button type="submit" style="background-color: #20c997;" class="btn text-light" routerLink="/EditUser"
+            routerLinkActive="active">Edit
+            Details</button>
+    </div>
+</div>

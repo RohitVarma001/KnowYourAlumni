@@ -1,1 +1,55 @@
-<p>alumi-contributor works!</p>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<h1>List of Alumini</h1>
+<div class="topnav">
+    <input type="text" placeholder="Search..">
+</div>
+
+<table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+    <thead>
+      <tr>
+        <th class="th-sm">Name
+  
+        </th>
+        <th class="th-sm">College Unique id
+  
+        </th>
+        <th class="th-sm">Course
+  
+        </th>
+        <th class="th-sm">Department
+  
+        </th>
+        <th class="th-sm">College
+  
+        </th>
+        <th class="th-sm">Passout year
+  
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let people of data">
+            <td>{{people.Name}}</td>
+            <td>{{people.Id}}</td>
+            <td>{{people.Course}}</td>
+            <td>{{people.Dept}}</td>
+            <td>{{people.College}}</td>
+            <td>{{people.Year}}</td>
+          </tr>
+    </tbody>
+  
+  </table>
+  <div class="flex">
+    <form  class="flex-item">
+      <button class="button">Add</button>
+    </form>
+  
+    <form  class="flex-item">
+      <button class="button">Edit</button>
+    </form>
+
+    <form class="flex-item">
+        <button class="button">Delete</button>
+      </form>
+  </div>
+

@@ -6,8 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./alumi-contributor.component.css']
 })
 export class AlumiContributorComponent implements OnInit {
-
-  constructor() { }
+  data: Array<any>;
+  constructor() { 
+    this.data = [
+      { Name: 'John', Id: 'DDSWW78', Course: 'BTECH',Dept:'CSE',College:'SIST',Year:'2018'},
+      { Name: 'John', Id: 'DDSWW78', Course: 'BTECH',Dept:'CSE',College:'SIST',Year:'2018 '},
+      { Name: 'John', Id: 'DDSWW78', Course: 'BTECH',Dept:'CSE',College:'SIST',Year:'2018' },
+      { Name: 'John', Id: 'DDSWW78', Course: 'BTECH',Dept:'CSE',College:'SIST',Year:'2018'}
+  ];
+  }
 
   ngOnInit(): void {
   }

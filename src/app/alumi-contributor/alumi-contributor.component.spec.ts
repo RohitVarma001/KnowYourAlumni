@@ -11,6 +11,7 @@ describe('AlumiContributorComponent', () => {
       declarations: [ AlumiContributorComponent ]
     })
     .compileComponents();
+    
   });
 
   beforeEach(() => {

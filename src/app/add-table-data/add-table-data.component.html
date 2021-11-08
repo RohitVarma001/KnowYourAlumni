@@ -1,0 +1,70 @@
+<p style="background-color: rgb(190,186,194);color: rgb(190,186,194);">hi</p>
+<div class="log_boxx text-dark">
+    <div class="log_box">
+        <h1 class="font-weight-bolder text-uppercase text-center">Add Table Data</h1>
+        <hr />
+        <p class="text-danger">
+            <strong>{{msg}}</strong>
+        </p>
+        <form (submit)="doaddTable(f)" #f="ngForm">
+            <label for="Name">Name :<input type="text" class="form-control" name="Name" placeholder="Enter Your Name"
+                    ngModel #username="ngModel" required />
+                <br>
+                <p class="alert alert-danger" *ngIf="username.errors?.required && username.touched">
+                    Please Enter Username
+                </p>
+                <p class="alert alert-danger" *ngIf="username.errors?.minlength && username.touched">
+                    Please Enter Minimum 6 Characters
+                </p>
+            </label>
+            <label for="cId">CollegeId :<input type="text" class="form-control" name="cId"
+                    placeholder="Enter Your College ID" ngModel #userId="ngModel" required />
+                <br>
+                <p class="alert alert-danger" *ngIf="userId.errors?.required && userId.touched">
+                    Please Enter Username
+                </p>
+            </label>
+            <label for="Email">Email :
+                <input type="text" class="form-control" name="Email" ngModel #useremail="ngModel"
+                    placeholder="example@mail.com" required email>
+                <br>
+                <p class="alert alert-danger" *ngIf="useremail.errors?.required && useremail.touched">
+                    Please Enter Your Email
+                </p>
+                <p class="alert alert-danger" *ngIf="useremail.errors?.email && useremail.touched">
+                    Please Enter Valid Email
+                </p>
+            </label>
+            <label for="Course_Dept">Course And Department :<input type="text" class="form-control" name="Course_Dept"
+                    ngModel #usercd="ngModel" placeholder="Enter your Course and Department here" required />
+            </label>
+            <label for="College">College :<input type="text" class="form-control" name="College"
+                    placeholder="Enter your College" ngModel #usercollege="ngModel" required />
+                <br>
+                <p class="alert alert-danger" *ngIf="usercollege.errors?.required && usercollege.touched">
+                    Please Enter User College
+                </p>
+            </label>
+            <label for="Phone">Phone Number :<input type="text" class="form-control" name="Phone"
+                    placeholder="Enter Your Phone Number" ngModel #userphone="ngModel" pattern="^(0|[1-9][0-9]*)$"
+                    minlength="10" required />
+                <br>
+                <p class="alert alert-danger" *ngIf="userphone.errors?.required && userphone.touched">
+                    Please Enter Phone
+                </p>
+                <p class="alert alert-danger" *ngIf="userphone.errors?.minlength && userphone.touched">
+                    Please Enter Minimum 10 Numbers
+                </p>
+                <p class="alert alert-danger" *ngIf="userphone.errors?.pattern">
+                    Please Enter Numbers Only
+                </p>
+            </label>
+            <label for="Year">Year Of Passing :<input type="text" class="form-control" name="Year" ngModel
+                    #usery="ngModel" placeholder="Enter your Year of Passing here" required />
+            </label>
+            <br>
+            <input type="submit" class="btn btn-success text-light" value="Add Data" [disabled]="f.invalid" /> &nbsp;
+        </form>
+    </div>
+</div>
+<p style="background-color: rgb(190,186,194);color: rgb(190,186,194);">hi</p>

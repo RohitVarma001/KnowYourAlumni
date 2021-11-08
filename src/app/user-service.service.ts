@@ -30,4 +30,8 @@ export class UserServiceService {
   isLoggedIn() {
     return !!localStorage.getItem("loggeduser");
   }
+
+  isAdmin(id: number) {
+    return this.http.get<boolean>("http://localhost:3000/isAdmin/" + id);
+  }
 }

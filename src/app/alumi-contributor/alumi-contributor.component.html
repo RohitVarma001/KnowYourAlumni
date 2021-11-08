@@ -1,55 +1,68 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<h1>List of Alumini</h1>
-<div class="topnav">
-    <input type="text" placeholder="Search..">
-</div>
-
-<table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
-    <thead>
-      <tr>
-        <th class="th-sm">Name
-  
-        </th>
-        <th class="th-sm">College Unique id
-  
-        </th>
-        <th class="th-sm">Course
-  
-        </th>
-        <th class="th-sm">Department
-  
-        </th>
-        <th class="th-sm">College
-  
-        </th>
-        <th class="th-sm">Passout year
-  
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let people of data">
-            <td>{{people.Name}}</td>
-            <td>{{people.Id}}</td>
-            <td>{{people.Course}}</td>
-            <td>{{people.Dept}}</td>
-            <td>{{people.College}}</td>
-            <td>{{people.Year}}</td>
-          </tr>
-    </tbody>
-  
-  </table>
-  <div class="flex">
-    <form  class="flex-item">
-      <button class="button">Add</button>
-    </form>
-  
-    <form  class="flex-item">
-      <button class="button">Edit</button>
-    </form>
-
-    <form class="flex-item">
-        <button class="button">Delete</button>
-      </form>
+<div class="log_boxx">
+  <div class="log_box">
+    <div class="row">
+      <div class="col text-center">
+        <h1><strong>List of Alumni</strong></h1>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm"></div>
+        <div class="col-sm"><strong>Search:</strong>&nbsp;&nbsp;<input type="text" #search
+            (keyup)="doSearch(search.value)" placeholder="Search By Name"></div>
+        <div class="col-sm"></div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <p style="color: white;">hi</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+            <thead class="table-dark">
+              <tr>
+                <th class="th-sm">S.No</th>
+                <th class="th-sm">Name</th>
+                <th class="th-sm">College ID</th>
+                <th class="th-sm">Email</th>
+                <th class="th-sm">Course And Department</th>
+                <th class="th-sm">College</th>
+                <th class="th-sm">Phone</th>
+                <th class="th-sm">Passout year</th>
+                <th *ngIf="isAdmin" class="th-sm">#</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let people of data,index as i">
+                <td>{{i+1}}</td>
+                <td>{{people.Name}}</td>
+                <td>{{people.cId}}</td>
+                <td>{{people.Email}}</td>
+                <td>{{people.Course_Dept}}</td>
+                <td>{{people.College}}</td>
+                <td>{{people.Phone}}</td>
+                <td>{{people.Year}}</td>
+                <td *ngIf="isAdmin"><button class="btn btn-sm btn-primary py-1 px-2"
+                    routerLink="/editTableData/{{people._id}}"
+                    routerLinkActive="active">Edit</button>&nbsp;&nbsp;<button class="btn btn-sm btn-danger py-1 px-2"
+                    (click)="doDelete(people._id)">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <p style="color: white;">hi</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col text-center"><button class="btn btn-primary py-1 px-3" *ngIf="user.isLoggedIn()"
+            routerLink="/addTableData" routerLinkActive="active">Add</button></div>
+      </div>
+      <br>
+    </div>
   </div>
-
+</div>

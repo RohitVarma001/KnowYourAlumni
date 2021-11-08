@@ -13,6 +13,8 @@ import { AlumiContributorComponent } from './alumi-contributor/alumi-contributor
 import { ProfileComponent } from './profile/profile.component';
 import { SignupComponent } from './signup/signup.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
+import { AddTableDataComponent } from './add-table-data/add-table-data.component';
+import { EditTableDataComponent } from './edit-table-data/edit-table-data.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { EditUserComponent } from './edit-user/edit-user.component';
     AlumiContributorComponent,
     ProfileComponent,
     SignupComponent,
-    EditUserComponent
+    EditUserComponent,
+    AddTableDataComponent,
+    EditTableDataComponent
   ],
   imports: [
     FormsModule,

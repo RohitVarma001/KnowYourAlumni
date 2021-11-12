@@ -25,10 +25,10 @@
                 <th class="th-sm">S.No</th>
                 <th class="th-sm">Name</th>
                 <th class="th-sm">College ID</th>
-                <th class="th-sm">Email</th>
+                <th class="th-sm" *ngIf="loggedIn">Email</th>
                 <th class="th-sm">Course And Department</th>
                 <th class="th-sm">College</th>
-                <th class="th-sm">Phone</th>
+                <th class="th-sm" *ngIf="loggedIn">Phone</th>
                 <th class="th-sm">Passout year</th>
                 <th *ngIf="isAdmin" class="th-sm">#</th>
               </tr>
@@ -38,10 +38,10 @@
                 <td>{{i+1}}</td>
                 <td>{{people.Name}}</td>
                 <td>{{people.cId}}</td>
-                <td>{{people.Email}}</td>
+                <td *ngIf="loggedIn">{{people.Email}}</td>
                 <td>{{people.Course_Dept}}</td>
                 <td>{{people.College}}</td>
-                <td>{{people.Phone}}</td>
+                <td *ngIf="loggedIn">{{people.Phone}}</td>
                 <td>{{people.Year}}</td>
                 <td *ngIf="isAdmin"><button class="btn btn-sm btn-primary py-1 px-2"
                     routerLink="/editTableData/{{people._id}}"

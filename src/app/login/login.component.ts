@@ -18,10 +18,8 @@ export class LoginComponent implements OnInit {
 
   doLogin(form: NgForm) {
     console.log("Login Successful");
-    console.log(form.value);
 
     this.userSer.userLogin(form.value).subscribe((data: any[]) => {
-      console.log(data);
       if (data.length === 0) {
         this.msg = "User Invalid";
       } else {

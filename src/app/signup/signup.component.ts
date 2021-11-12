@@ -19,8 +19,6 @@ export class SignupComponent implements OnInit {
   doRegistration(form: NgForm) {
     console.log("User Registered");
 
-    console.log(form.value);
-
     this.userSer.userRegistration(form.value).subscribe((data: string) => {
 
       console.log(data);

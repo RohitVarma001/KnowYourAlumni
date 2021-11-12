@@ -34,7 +34,6 @@ export class EditUserComponent implements OnInit {
     formData.value._id = this.userId;
     if (formData.value.uopassword === this.userSer.user.upassword) {
       this.userSer.editUserData(formData.value).subscribe((data) => {
-        console.log(data);
         this.msg = data;
         formData.reset();
         this.router.navigate(['/profile']);

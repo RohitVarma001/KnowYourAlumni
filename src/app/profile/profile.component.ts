@@ -20,7 +20,6 @@ export class ProfileComponent implements OnInit {
     this.data = {
       _id: parseInt(localStorage.getItem("loggeduser"))
     };
-    console.log(this.data);
     this.userSer.userData(this.data).subscribe((data: any[]) => {
       if (data.length === 0) {
         this.msg = "User Invalid";

@@ -43,7 +43,6 @@ export class EditTableDataComponent implements OnInit {
     form.value._id = this._id;
     console.log(form.value);
     this.tableSrc.editTableData(form.value).subscribe((data) => {
-      console.log(data);
       this.msg = data;
       form.reset();
       this.router.navigate(['/alumni']);

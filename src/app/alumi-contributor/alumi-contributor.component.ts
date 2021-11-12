@@ -11,13 +11,14 @@ export class AlumiContributorComponent implements OnInit {
   data: any[];
   msg: string
   isAdmin: boolean = false
+  loggedIn: boolean = false
 
   constructor(public tablesrc: TableServiceService, public user: UserServiceService) { }
 
   ngOnInit(): void {
-    if (this.user.isLoggedIn) {
+    this.loggedIn = this.user.isLoggedIn();
+    if (this.user.isLoggedIn()) {
       this.user.isAdmin(parseInt(localStorage.getItem("loggeduser"))).subscribe((data: boolean) => {
-        console.log(data);
         this.isAdmin = data;
       });
     }

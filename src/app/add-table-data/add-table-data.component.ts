@@ -22,8 +22,6 @@ export class AddTableDataComponent implements OnInit {
 
     this.tableSrc.addTableData(form.value).subscribe((data: string) => {
 
-      console.log(data);
-
       this.msg = data;
 
       form.reset();
